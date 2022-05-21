@@ -55,6 +55,7 @@ namespace CETask.Services
         }
         public async Task<IEnumerable<Item>> GetMultipleAsync(string queryString)
         {
+            queryString = "SELECT * FROM c";
             try
             {
                 var query = _container.GetItemQueryIterator<Item>(new QueryDefinition(queryString));

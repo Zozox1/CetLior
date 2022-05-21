@@ -25,7 +25,7 @@ namespace CETask.Controllers
         [HttpGet]
         public async Task<IActionResult> List()
         {
-            return Ok(await _cosmosDbService.GetMultipleAsync("SELECT * FROM c"));
+            return Ok(await _cosmosDbService.GetMultipleAsync());
         }
 
         [HttpGet("{id}")]
