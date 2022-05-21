@@ -8,6 +8,7 @@ using Microsoft.Azure.Cosmos;
 
 namespace CETask.Services
 {
+    //Cosmos Service 
     public class CosmosDbService : ICosmosDbService
     {
         private Container _container;
@@ -20,11 +21,25 @@ namespace CETask.Services
         }
         public async Task AddAsync(Item item)
         {
-            await _container.CreateItemAsync(item, new PartitionKey(item.EntryID));
+            try
+            {
+                await _container.CreateItemAsync(item, new PartitionKey(item.EntryID));
+            }
+            catch (CosmosException) //For handling item not found and other exceptions
+            {
+
+            }
         }
-        public async Task DeleteAsync(string EntryID)
+            public async Task DeleteAsync(string EntryID)
         {
-            await _container.DeleteItemAsync<Item>(EntryID, new PartitionKey(EntryID));
+            try
+            {
+                await _container.DeleteItemAsync<Item>(EntryID, new PartitionKey(EntryID));
+            }
+            catch (CosmosException) //For handling item not found and other exceptions
+            {
+               
+            }
         }
         public async Task<Item> GetAsync(string EntryID)
         {
@@ -40,7 +55,9 @@ namespace CETask.Services
         }
         public async Task<IEnumerable<Item>> GetMultipleAsync(string queryString)
         {
-            var query = _container.GetItemQueryIterator<Item>(new QueryDefinition(queryString));
+            try
+            {
+                var query = _container.GetItemQueryIterator<Item>(new QueryDefinition(queryString));
             var results = new List<Item>();
             while (query.HasMoreResults)
             {
@@ -48,10 +65,22 @@ namespace CETask.Services
                 results.AddRange(response.ToList());
             }
             return results;
+            }
+            catch (CosmosException) //For handling item not found and other exceptions
+            {
+                return null;
+            }
         }
         public async Task UpdateAsync(string EntryID, Item item)
         {
-            await _container.UpsertItemAsync(item, new PartitionKey(EntryID));
+            try
+            {
+                await _container.UpsertItemAsync(item, new PartitionKey(EntryID));
+            }
+            catch (CosmosException) //For handling item not found and other exceptions
+            {
+               
+            }
         }
     }
 }
