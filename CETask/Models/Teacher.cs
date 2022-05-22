@@ -20,6 +20,7 @@ namespace CETask.Models
         [JsonProperty(PropertyName = "Name")]
         public string Name { get; set; }
         [Required]
+        [JsonProperty(PropertyName = "GradesString")]
         public string GradesString { get; set; }
         public string Type { get => "Teacher"; }
     }
