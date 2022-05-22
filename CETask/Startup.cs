@@ -25,6 +25,7 @@ namespace CETask
             services.AddControllers();
             services.AddSwaggerGen();
             services.AddSingleton<ICosmosDbService>(InitializeCosmosClientInstanceAsync(Configuration.GetSection("CosmosDb")).GetAwaiter().GetResult());
+            services.AddControllersWithViews();
 
         }
 
@@ -35,7 +36,7 @@ namespace CETask
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseStaticFiles();
             app.UseHttpsRedirection();
 
             app.UseRouting();
@@ -49,6 +50,13 @@ namespace CETask
             app.UseSwagger();
             app.UseSwaggerUI(c => {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V2");
+            });
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=SignUp}/{action=Index}/{id?}");
             });
 
         }

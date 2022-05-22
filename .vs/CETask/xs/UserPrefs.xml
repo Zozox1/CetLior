@@ -1,13 +1,21 @@
 ﻿<Properties StartupConfiguration="{86BD1EBD-B0CC-4647-A1FD-D2B033AAA16B}|Default">
   <MonoDevelop.Ide.ItemProperties.CETask PreferredExecutionTarget="/System/Volumes/Data/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CETask/Controllers/CETController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CETask/Models/Teacher.cs">
     <Files>
-      <File FileName="CETask/Startup.cs" Line="9" Column="1" />
-      <File FileName="CETask/Models/Item.cs" Line="17" Column="9" />
-      <File FileName="CETask/Services/CosmosDbService.cs" Line="14" Column="1" />
-      <File FileName="CETask/appsettings.json" />
-      <File FileName="CETask/Program.cs" Line="16" Column="1" />
-      <File FileName="CETask/Controllers/CETController.cs" Line="1" Column="1" />
+      <File FileName="CETask/Startup.cs" Line="14" Column="53" />
+      <File FileName="CETask/Services/CosmosDbService.cs" Line="60" Column="12" />
+      <File FileName="CETask/appsettings.json" Line="15" Column="4" />
+      <File FileName="CETask/Views/Shared/_Layout.cshtml" Line="24" Column="93" />
+      <File FileName="CETask/Program.cs" Line="1" Column="1" />
+      <File FileName="CETask/Properties/launchSettings.json" Line="24" Column="35" />
+      <File FileName="CETask/Views/SignUp/Pupil.cshtml" Line="38" Column="1" />
+      <File FileName="CETask/Interfaces/ICosmosDbService.cs" Line="16" Column="43" />
+      <File FileName="CETask/Models/Pupil.cs" Line="22" Column="9" />
+      <File FileName="CETask/Controllers/SignUpController.cs" Line="25" Column="1" />
+      <File FileName="CETask/Controllers/TeacherController.cs" Line="47" Column="1" />
+      <File FileName="CETask/Controllers/PupilController.cs" Line="28" Column="62" />
+      <File FileName="CETask/Models/Teacher.cs" Line="25" Column="24" />
+      <File FileName="CETask/Views/SignUp/Teacher.cshtml" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,11 +25,17 @@
               <Node name="Dependencies" expanded="True">
                 <Node name="PackageDependencies" expanded="True" />
               </Node>
-              <Node name="Controllers" expanded="True">
-                <Node name="CETController.cs" selected="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Interfaces" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="Teacher.cs" selected="True" />
               </Node>
-              <Node name="Models" expanded="True" />
               <Node name="Services" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Shared" expanded="True" />
+                <Node name="SignUp" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -32,8 +46,10 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/zahrantaha/Projects/CETask/CETask/Controllers/CETController.cs" relfile="CETask/Controllers/CETController.cs" line="52" column="1" />
-      <Breakpoint file="/Users/zahrantaha/Projects/CETask/CETask/Controllers/CETController.cs" relfile="CETask/Controllers/CETController.cs" line="32" column="1" />
+      <Breakpoint file="/Users/zahrantaha/Projects/CETask/CETask/Services/CosmosDbService.cs" relfile="CETask/Services/CosmosDbService.cs" line="94" column="1" />
+      <Breakpoint file="/Users/zahrantaha/Projects/CETask/CETask/Services/CosmosDbService.cs" relfile="CETask/Services/CosmosDbService.cs" line="92" column="1" />
+      <Breakpoint file="/Users/zahrantaha/Projects/CETask/CETask/Services/CosmosDbService.cs" relfile="CETask/Services/CosmosDbService.cs" line="64" column="1" />
+      <Breakpoint file="/Users/zahrantaha/Projects/CETask/CETask/Services/CosmosDbService.cs" relfile="CETask/Services/CosmosDbService.cs" line="66" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
